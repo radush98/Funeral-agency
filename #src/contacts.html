@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/contacts.min.css">
+    <title>Вознесение</title>
+</head>
+
+<body>
+    @@include('_header.html')
+    <main class="main">
+        <div class="container">
+            <h2 class="main-title">Контакты</h2>
+            <p class="suggestion">Пожалуйста, заполните эту форму, чтобы связаться с нами. Наши сотрудники ответят вам
+                как можно скорее</p>
+            <form action="email.php" class="form" method="POST">
+                <input type="text" name="name" id="name" placeholder="Введите имя:">
+                <input type="text" name="email" id="email" placeholder="Почта:">
+                <input type="text" name="number" id="number" placeholder="Номер телефона:">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Сообщение:"></textarea>
+                <input type="submit" value="Отправить" class="submit">
+            </form>
+            <section class="address">
+                <div class="column">
+                    <div class="address-description">
+                        <h3 class="address-title title">Наш адрес</h3>
+                        <p class="address-paragraph text">
+                            ул. Соборная (бывш. Ленина) 69
+                            г.Рени, Одесская область
+                            68803
+                        </p>
+                    </div>
+
+                    <div class="phone">
+                        <h3 class="phone-title title">Контактный телефон</h3>
+                        <div class="phones">
+                            <p class="phone-kiev text">+38 (067) 992 4178</p>
+                            <p class="phone-life text">+38 (093) 109 3280</p>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="img/contacts/map.png" alt="map" class="address-map">
+            </section>
+        </div>
+    </main>
+    @@include('_footer.html')
+</body>
+
+</html>

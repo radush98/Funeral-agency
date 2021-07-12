@@ -1,0 +1,226 @@
+@max-width:1900px;
+@height:700px;
+@white-font:#FFF;
+@blue-font:#1C68D0;
+@content:1200px;
+@frame-color:#5EC2F2;
+
+.center-align(){
+    margin:0 auto;
+}
+
+footer{
+    //.center-align();
+    //max-width:@max-width;
+    margin-top:60px;
+    font-family: "Roboto", sans-serif;
+    width:100%;
+    margin-bottom:0;
+    background-color:#5EC2F2;
+    color:@white-font;
+    
+
+    .container{
+        padding-top:32px;
+        display: flex;
+        flex-wrap:wrap;
+        //justify-content:space-between;
+        
+    }
+
+    .column{
+        display:flex;
+        flex-direction: column;
+        width:33.3%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: 0.05em;            
+    }
+    
+    .first-column{
+            
+        .social{
+            min-width:100px;
+            height:60px;
+            width:40%;
+            display:flex;
+            margin:20px auto 0;
+
+            a{
+                display:block;
+                width:33%;
+                height:auto;
+                background:url(../img/instagram.svg) no-repeat;
+                background-size:contain;
+                margin-left:10px;
+
+                &:hover{
+                    transition:all .5s;
+                    transform:scale(1.2);
+                }
+            }
+
+            .fb{
+                background:url(../img/fb.svg) no-repeat;
+                background-size:contain;
+            }
+
+            .telegram{
+                background:url(../img/telegram.svg) no-repeat;
+                background-size:contain;
+            }
+
+            .inst{
+                margin-left:15px;
+            }
+
+        }
+    }
+
+    .title{
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.05em;
+
+        &::after{
+            content:"";
+            display:block;
+            width:25%;
+            height:3px;
+            border-radius:3px;
+            background-color:@white-font;
+            margin:13px auto 0;
+        }
+    }
+
+    .column-content{
+        display:flex;
+        flex-direction:column;
+        margin-left:auto;
+        margin-right:auto;
+        .column-item{
+            margin-top:25px;
+            text-align:center;
+            display:inline-block;
+            vertical-align:baseline;
+
+            &::before{
+                content:"";
+                display:inline-block;
+                width:17.5px;
+                height:12.5px;
+                margin-right:3px;
+            }
+        }
+
+        .second{
+            margin-top:15px;
+        }
+
+        .content-fill(@url){
+            background:@url no-repeat center;
+            background-size:cover;
+        }
+
+        .email::before{
+            .content-fill(url(../img/email.svg));
+        }
+
+        .number::before{
+            .content-fill(url(../img/phone-call.svg));
+            height:14px;
+        }
+
+        .address::before{
+            .content-fill(url(../img/geo.svg));
+            width:15px;
+            height:15px;
+        }
+    }
+
+    .copyright{
+        margin:50px auto auto;
+        padding-bottom:15px;
+    }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+
+  .container{
+      padding:0 8px;
+  }
+    footer{
+        margin-top:35px;
+        .container{
+            flex-direction: column;
+            .column{
+                width:100%;
+            }
+
+            .third-column{
+                margin-top:30px;
+        }
+    }
+}
+}
+
+@media only screen
+and (min-width: 320px)
+and (max-width: 480px) {
+
+  .container{
+      padding:0 8px;
+  }
+    footer{
+        margin-top:35px;
+        .container{
+            flex-direction: column;
+            .column{
+                width:100%;
+            }
+
+            .third-column{
+                margin-top:30px;
+        }
+    }
+}
+}
+
+@media only screen
+and (max-device-width: 320px){
+        footer{
+            .container{
+                flex-direction: column;
+                .column{
+                    width:100%;
+                }
+    
+                .third-column{
+                    margin-top:30px;
+            }
+        }
+    }
+    
+}
+
+@media only screen
+and (max-width: 320px){
+        footer{
+            .container{
+                flex-direction: column;
+                .column{
+                    width:100%;
+                }
+    
+                .third-column{
+                    margin-top:30px;
+            }
+        }
+    }
+    
+}

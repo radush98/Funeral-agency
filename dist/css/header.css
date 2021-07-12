@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*min-width:320px;
+    max-width: @max-width;
+    font-family: "Roboto", sans-serif;
+    .center-align();
+    width:100%;
+    height:auto;
+    position:relative;*/
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+header {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 104px;
+  background-color: #5EC2F2;
+  color: #FFF;
+  -webkit-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  transition: all ease 1s;
+}
+
+header .top {
+  padding-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  position: relative;
+}
+
+header .top .menu {
+  -webkit-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  transition: all ease 1s;
+}
+
+header .top .menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+header .top .menu-item {
+  margin-left: 50px;
+}
+
+header .top .menu-item a {
+  text-decoration: none;
+  color: #FFF;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 19px;
+  position: relative;
+}
+
+header .top .menu-item a::before,
+header .top .menu-item a::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-radius: 2px;
+  background-color: #FFF;
+  opacity: 0;
+}
+
+header .top .menu-item a:hover::before {
+  bottom: -9px;
+  opacity: 1;
+}
+
+header .top .menu-item a:hover::after {
+  top: -9px;
+  opacity: 1;
+}
+
+header .top-burger {
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  width: 34px;
+  height: 26px;
+}
+
+header .top-burger span {
+  position: absolute;
+  top: 12px;
+  display: block;
+  width: 34px;
+  height: 2px;
+  background-color: #FFF;
+  -webkit-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  transition: all ease 1s;
+}
+
+header .top-burger::after {
+  position: absolute;
+  content: "";
+  width: 34px;
+  height: 2px;
+  background-color: #FFF;
+  top: 0;
+  -webkit-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  transition: all ease 1s;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+}
+
+header .top-burger::before {
+  position: absolute;
+  content: "";
+  width: 34px;
+  height: 2px;
+  background-color: #FFF;
+  bottom: 0;
+  -webkit-transition: all ease 1s;
+  -o-transition: all ease 1s;
+  transition: all ease 1s;
+  -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+          transform-origin: left;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .top {
+    padding: 0;
+    z-index: 3;
+    display: block;
+  }
+
+  .top-burger {
+    z-index: 4;
+  }
+
+  .menu {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    z-index: 2;
+  }
+
+  .menu-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .menu-item {
+    margin-top: 15px;
+  }
+
+  .menu a {
+    text-transform: uppercase;
+    font-size: 30px;
+  }
+
+  .menu.active {
+    top: 90px;
+    left: 0;
+  }
+
+  .header::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #5EC2F2;
+    position: absolute;
+    z-index: 1;
+    top: -100%;
+  }
+
+  .header.active::before {
+    top: 0;
+  }
+
+  .top.active {
+    position: fixed;
+    left: 8;
+    top: 0;
+  }
+
+  .top-burger.active {
+    position: fixed;
+    right: 15px;
+  }
+
+  .top-burger.active::before {
+    -webkit-transform: rotate(-47deg);
+        -ms-transform: rotate(-47deg);
+            transform: rotate(-47deg);
+  }
+
+  .top-burger.active::after {
+    -webkit-transform: rotate(47deg);
+        -ms-transform: rotate(47deg);
+            transform: rotate(47deg);
+  }
+
+  .top-burger.active span {
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  header {
+    height: 64px;
+  }
+
+  header .top {
+    padding-top: 10px;
+  }
+
+  .container {
+    padding: 0 8px;
+  }
+}
